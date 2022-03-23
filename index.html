@@ -140,8 +140,17 @@
         var context = canvas.getContext("2d");
         context.font = '20pt Calibri';
         context.fillStyle = "black";
-        context.fillText("Original image will go here", 10, 20);
+        context.fillText("Original Image Will Go Here", 10, 20);
       </script>
+     
+      <canvas id 2="myCanvas2" width="600" height="500" style="border:1px solid #000000;"></canvas>
+      <script>
+        function add_cavas()
+             var canvas2 = document.getElementById('myCanvas2');
+             var context2 = canvas2.getContext("2D");
+             context2.fillStyle = "black";
+             context2.fillText("Blue Image Will Go Here")
+     
 
     </div><!-- /content -->
     <div data-role="footer" data-position="fixed">
