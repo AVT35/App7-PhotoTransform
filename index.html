@@ -50,7 +50,7 @@
   var canvas = document.createElement('canvas');
   canvas.width = 1;
   canvas.height = ih;
-  var ctx = canvas.getContext('2D');
+  var ctx = canvas.getContext('2d');
   ctx.drawImage(img, 0, 0);
   var data = ctx.getImageData(0, 0, 1, ih).data;
   var sy = 0;
@@ -102,7 +102,7 @@
 
           /* PUT ANY CHANGES TO THE JAVASCRIPT HERE  */
          var canvas2 = document.getElementById('myCanvas2');
-         var context2 = canvas2.getContext("2D");
+         var context2 = canvas2.getContext("2d");
              
          var imageData = context.getImageData (0, 0, 600, 500);
          var data = imageData.data;
@@ -148,7 +148,7 @@
       <canvas id="myCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
       <script> /* This script initiates the cavas and puts the text on the canvas "myCanvas" */
         var canvas = document.getElementById('myCanvas');
-        var context = canvas.getContext("2D");
+        var context = canvas.getContext("2d");
         context.font = '20pt Calibri';
         context.fillStyle = "black";
         context.fillText("Original Image Will Go Here", 10, 20);
@@ -157,7 +157,7 @@
       <canvas id="myCanvas2" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
       <script> /* This script initiates the cavas and puts the text on the canvas "myCanvas" */
         var canvas2 = document.getElementById('myCanvas2');
-        var context2 = canvas2.getContext("2D");
+        var context2 = canvas2.getContext("2d");
         context2.font = '20pt Calibri';
         context2.fillStyle = "black";
         context2.fillText("Colored Image will go here", 10, 20);
