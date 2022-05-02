@@ -50,7 +50,7 @@
   var canvas = document.createElement('canvas');
   canvas.width = 1;
   canvas.height = ih;
-  var ctx = canvas.getContext('2d');
+  var ctx = canvas.getContext('2D');
   ctx.drawImage(img, 0, 0);
   var data = ctx.getImageData(0, 0, 1, ih).data;
   var sy = 0;
@@ -148,7 +148,7 @@
       <canvas id="myCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
       <script> /* This script initiates the cavas and puts the text on the canvas "myCanvas" */
         var canvas = document.getElementById('myCanvas');
-        var context = canvas.getContext("2d");
+        var context = canvas.getContext("2D");
         context.font = '20pt Calibri';
         context.fillStyle = "black";
         context.fillText("Original Image Will Go Here", 10, 20);
