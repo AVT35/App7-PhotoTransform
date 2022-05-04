@@ -27,7 +27,7 @@
   The goal of this code is to load a second canvas where the loaded image will be displayed with blue pixels. 
  
   Known Issues:
-  blah, blah, blah, blah
+  I had trouble getting the image to load. Ther error turned out to be syntactical, as the 'd' in '2d' had to be lower case. 
 -->
 
  <head>
@@ -101,19 +101,18 @@
           /*  ++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
           /* PUT ANY CHANGES TO THE JAVASCRIPT HERE  */
-         var canvas2 = document.getElementById('myCanvas2');
-         var context2 = canvas2.getContext("2d");
+         var canvas2 = document.getElementById('myCanvas2'); //this creates the second canvas, which will display the blue image
+         var context2 = canvas2.getContext("2d"); //this code is setting the dimensions for the second canvas. the lowercase d matters for the code to function properly
              
-         var imageData = context.getImageData (0, 0, 600, 500);
-         var data = imageData.data;
+         var imageData = context.getImageData (0, 0, 600, 500); //this is setting the diemnsions for the image to appear
+         var data = imageData.data; //this is creating the variable 'data' and setting it equal to the imageData in the line above
          
          
-         for(var i=0, n=data.length; i < n; i += 4){  
-             data [i] = 0; 
-             data [i+1] = 0; 
+         for(var i=0, n=data.length; i < n; i += 4){ //this is a for loop responsible for turning the image in the second canvas blue
+             data [i+1] = 0; //the data for the green and red pixels is set to zero
          }
          
-         context2.putImageData(imageData, 0, 0);
+         context2.putImageData(imageData, 0, 0); //this puts the image in the second canvas
                        
          } // end of img.onload
         
@@ -145,22 +144,22 @@
       </div>
       <div id="messageDisplayArea"></div>
       
-      <canvas id="myCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
+      <canvas id="myCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas> /*this sets the id of the canvas so the code can recognize instructions above*/
       <script> /* This script initiates the cavas and puts the text on the canvas "myCanvas" */
-        var canvas = document.getElementById('myCanvas');
-        var context = canvas.getContext("2d");
-        context.font = '20pt Calibri';
-        context.fillStyle = "black";
-        context.fillText("Original Image Will Go Here", 10, 20);
+        var canvas = document.getElementById('myCanvas'); /*this is calling the first canvas*/
+        var context = canvas.getContext("2d"); /*this code is setting the dimension for the first canvas*/
+        context.font = '20pt Calibri'; /*this is setting the font and font size for the text in the first canvas*/
+        context.fillStyle = "black"; /*this is setting the border color for the first canvas*/
+        context.fillText("Original Image Will Go Here", 10, 20); /*this is the instruction and location for the text present in the first canvas*/
       </script>
      
-      <canvas id="myCanvas2" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
+      <canvas id="myCanvas2" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas> /*this sets the id of the canvas so the code can recognize instructions above*/
       <script> /* This script initiates the cavas and puts the text on the canvas "myCanvas" */
-        var canvas2 = document.getElementById('myCanvas2');
-        var context2 = canvas2.getContext("2d");
-        context2.font = '20pt Calibri';
-        context2.fillStyle = "black";
-        context2.fillText("Colored Image will go here", 10, 20);
+        var canvas2 = document.getElementById('myCanvas2'); /*this is calling the second canvas*/
+        var context2 = canvas2.getContext("2d"); /*this code is setting the dimension for the second canvas*/
+        context2.font = '20pt Calibri'; /*this is setting the font and font size for the text in the second canvas*/
+        context2.fillStyle = "black"; /*this is setting the border color for the second canvas*/
+        context2.fillText("Colored Image will go here", 10, 20); /*this is the instruction and location for the text present in the second canvas*/
       </script>
      
 
